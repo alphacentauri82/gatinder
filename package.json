@@ -8,8 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@progress/kendo-buttons-vue-wrapper": "^2018.1.313",
-    "@progress/kendo-theme-default": "^2.53.0",
+    "@progress/kendo-buttons-vue-wrapper": "^2018.2.515",
+    "@progress/kendo-theme-default": "^2.53.1",
     "@progress/kendo-ui": "^2018.2.515",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
