@@ -16,7 +16,7 @@
 <script>
 
   export default {
-    name: 'galery',
+    name: 'gallery',
     data () {
       return {
         position: 1,
@@ -30,15 +30,13 @@
     },
     methods: {
       addFavorite() {
-        let position = this.position
+        let id = this.position
         let url = this.$refs.currentImage.src
-        let finder = this.selectedImage.filter(item => item.id === position)
-        let status = (finder.length !== 0)
-        console.log(status)
-       if (!status) {
+        let finder = this.selectedImage.filter(item => item.id === id)
+       if (finder.length === 0) {
          this.selectedImage.push({
-           id: position,
-           url: url
+           id,
+           url
          })
        }
       }

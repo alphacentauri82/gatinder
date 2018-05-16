@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Gallery from './components/galery.vue'
+import Gallery from './components/gallery.vue'
 
 export default {
   name: 'app',
