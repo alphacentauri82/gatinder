@@ -1,13 +1,13 @@
 <template>
     <div class="gridGallery">
         <div class="item">
-            <img :src="image" width=100% />
+            <img :src="image" width=100% @click="addFavorite" ref="currentImage"/>
         </div>
         <div class="item">
-           <button class="k-primary" @click="position++">Mas</button>
+           <button class="k-primary" @click="position++">Siguiente</button>
         </div>
         <div class="item">
-            <img v-for="element in selectedImage " :key="element.id" :src="element.url">
+            <img v-for="element in selectedImage " :key="element.id" :src="element.url" width="100%">
         </div>
     </div>
 </template>
@@ -26,6 +26,14 @@
       image () {
         return 'http://thecatapi.com/api/images/get?' + this.position
       }
+    },
+    methods: {
+      addFavorite() {
+        this.selectedImage.push({
+          id: this.position,
+          url: this.$refs.currentImage.src
+        })
+      }
     }
   }
 </script>
@@ -35,5 +43,9 @@
         display: grid;
         grid-template-columns: 4fr 1fr 2fr;
         grid-column-gap: 10px;
+    }
+    img:hover {
+        cursor:pointer;
+        opacity: 0.7;
     }
 </style>
