@@ -7,7 +7,8 @@
            <button class="k-primary" @click="position++">Siguiente</button>
         </div>
         <div class="item">
-            <img v-for="element in selectedImage " :key="element.id" :src="element.url" width="100%">
+            <img v-for="(element, index) in selectedImage " :key="element.id" :src="element.url" width="100%"
+                 @click="selectedImage.splice(index,1)">
         </div>
     </div>
 </template>
@@ -29,10 +30,17 @@
     },
     methods: {
       addFavorite() {
-        this.selectedImage.push({
-          id: this.position,
-          url: this.$refs.currentImage.src
-        })
+        let position = this.position
+        let url = this.$refs.currentImage.src
+        let finder = this.selectedImage.filter(item => item.id === position)
+        let status = (finder.length !== 0)
+        console.log(status)
+       if (!status) {
+         this.selectedImage.push({
+           id: position,
+           url: url
+         })
+       }
       }
     }
   }
