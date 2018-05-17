@@ -4,7 +4,7 @@
             <img :src="image" width=100% @click="addFavorite" ref="currentImage"/>
         </div>
         <div class="item">
-           <button class="k-primary" @click="position++">Siguiente</button>
+           <kendo-button class="k-primary" @click="position++">Siguiente</kendo-button>
         </div>
         <div class="item">
             <img v-for="(element, index) in selectedImage " :key="element.id" :src="element.url" width="100%"
@@ -14,9 +14,12 @@
 </template>
 
 <script>
-
+  import { Button } from '@progress/kendo-buttons-vue-wrapper'
   export default {
     name: 'gallery',
+    components: {
+      Button
+    },
     data () {
       return {
         position: 1,
