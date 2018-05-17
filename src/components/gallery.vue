@@ -35,7 +35,7 @@
       addFavorite() {
         let id = this.position
         let url = this.$refs.currentImage.src
-        let finder = this.selectedImage.filter(item => item.id === id)
+        let finder = this.selectedImage.filter(item => item.url === url)
        if (finder.length === 0) {
          this.selectedImage.push({
            id,
