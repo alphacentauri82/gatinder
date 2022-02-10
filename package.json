@@ -11,7 +11,7 @@
     "@progress/kendo-buttons-vue-wrapper": "^2018.2.516",
     "@progress/kendo-theme-default": "^2.53.1",
     "@progress/kendo-ui": "^2018.2.516",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.0.1",
     "vue": "^2.5.16"
   },
